@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Spam Detector</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 500px; margin: auto; }
+        textarea { width: 100%; height: 100px; margin-bottom: 15px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Spam Detector</h1>
+        <form method="POST" action="/predict">
+            <textarea name="email_content" placeholder="Enter your email content..."></textarea>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2>Result: {{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
